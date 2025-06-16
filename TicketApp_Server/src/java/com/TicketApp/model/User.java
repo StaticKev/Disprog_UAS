@@ -89,14 +89,15 @@ public class User {
         return result;
     }
     
-    public static boolean read_UsernameIsExist(String username) {
+    public static boolean read_AccountIsExist(String email, String username) {
         boolean result = false;
         
         try (Connection conn = DBConnection.getConnection()) {
-            String sql = "SELECT COUNT(*) AS `c` FROM users WHERE username = ?;";
+            String sql = "SELECT COUNT(*) AS `c` FROM users WHERE email = ? AND username = ?;";
             
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, username);
+                ps.setString(1, email);
+                ps.setString(2, username);
 
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) result = rs.getInt("c") != 0;
@@ -115,7 +116,7 @@ public class User {
         boolean result = false;
         
         try (Connection conn = DBConnection.getConnection()) {
-            String sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?);";
+            String sql = "INSERT INTO `users` (`username`, `password`, `email`) VALUES (?, ?, ?);";
             
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, user.getUsername());
@@ -123,6 +124,7 @@ public class User {
                 ps.setString(3, user.getEmail());
 
                 int ru = ps.executeUpdate();
+                System.out.println(ru);
                 result = ru != 0;
             } catch (SQLException e) {
                 System.err.println(e.getMessage());
