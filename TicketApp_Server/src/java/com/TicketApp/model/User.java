@@ -16,6 +16,7 @@ public class User {
     private String email;
     private List<Purchase> purchasedTicket;
     private List<Notification> notifications;
+    private List<Ticket> favorite;
     // </editor-fold>
     
     // <editor-fold>
@@ -35,8 +36,9 @@ public class User {
         this.username = username;
         this.password = password;
         this.email = email;
-        purchasedTicket = new ArrayList<>();
-        notifications = new ArrayList<>();
+        purchasedTicket = new ArrayList<>(); // HARUS DIGANTI
+        notifications = new ArrayList<>(); // HARUS DIGANTI
+        favorite = new ArrayList<>(); // HARUS DIGANTI
     }
     // </editor-fold>
     
@@ -52,6 +54,8 @@ public class User {
     public List<Purchase> getPurchasedTicket() { return purchasedTicket; }
 
     public List<Notification> getNotifications() { return notifications; }
+    
+    public List<Ticket> getFavorite() { return favorite; }
     // </editor-fold>
     
     // <editor-fold>
