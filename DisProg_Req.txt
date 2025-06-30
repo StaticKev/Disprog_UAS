@@ -1,0 +1,65 @@
+===========================================================
+
+Week 9 
+• Buat form login dengan username, dan password. Serta 1 
+  button untuk memproses login. 
+• Setelah tombol login diklik, maka client akan menghubungi
+  server dengan protokol HTTP Webservice yang telah dibuat 
+  sebelumnya.
+
+===========================================================
+
+Week 10 
+• Buat ERD untuk sistem
+
+===========================================================
+
+Week 11
+• Modifikasi fitur login dan register. Gunakan tabel user
+  di ERD yang telah dibuat, dan buat class untuk menangani
+  proses CRUD.
+• Integrasikan project dengan database dengan JDBC.
+• Tampilkan pesan konfirmasi.
+• Tambahkan fitur CRUD untuk tabel tiket. 
+
+===========================================================
+
+Week 12
+• Client-side Application 
+    1) Form Login
+    2) Form Register
+    3) Query tiket yang ada termasuk FLASH SALE?
+• Server-side Application
+    1) Dapat memproses request login dari client. 
+    2) Dapat memproses request register dari client. 
+    3) Dapat merespon request tiket dari client.
+
+===========================================================
+
+Week 13
+• Tambahkan fitur reservasi tiket
+    1) Setiap kali user berhasil memesan tiket, sistem 
+       akan secara otomatis mengirimkan notifikasi sukses 
+       ke user yang melakukan reservasi. 
+    2) User dapat merubah jadwal dari tiket yang sudah 
+       dipesan dan membatalkan tiket yang sudah dipesan.
+• Tambahkan fitur notifikasi sistem
+    1) Admin dapat broadcast message ke semua user yang 
+       terdaftar di sistem. 
+    2) User dapat mengetahui berapa notifikasi yang belum
+       atau sudah dibaca, dan dapat menghapus notifikasi 
+       yang sudah dibaca. 
+• Pemilahan hak akses. 
+
+===========================================================
+
+NOTE: 
+• Mekanisme Flash Sale belum dijelaskan. <Poin 1, Week 12>
+• Pesan apa yang di broadcast? <Poin 2, Week 13>
+
+===========================================================
+
+- Update class purchase (tambahin status)
+- Fungsi untuk pembatalan tiket (udpate purchase)
+- Tambahin enum status
+- Tambahan variasi query ngikuti yang di GDocs (nanti aja)

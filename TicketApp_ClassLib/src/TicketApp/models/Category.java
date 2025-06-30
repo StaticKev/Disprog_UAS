@@ -1,4 +1,4 @@
-package com.TicketApp.model;
+package TicketApp.models;
 
 public enum Category {
     MOVIE,
