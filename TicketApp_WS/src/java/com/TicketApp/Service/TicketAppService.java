@@ -1,20 +1,20 @@
 package com.TicketApp.Service;
 
-import TicketApp.models.User;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import TicketApp.models.User;
 
 @WebService(serviceName = "TicketAppWS")
 public class TicketAppService {
 
-    private User user;
+    User user;
     
     public TicketAppService(){
         user = new User();
     } 
     /**
-     * Web service operation
+     * This is a sample web service operation
      * @param txt
      * @return 
      */
@@ -42,9 +42,10 @@ public class TicketAppService {
      * @return 
      */
     @WebMethod(operationName = "login")
-    public boolean login(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
+    public User login(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
         user = new User(username, password);
-        return user.read_User();
+        if (user.read_User())return user;
+        else return null;
     }
 
     /**
@@ -53,8 +54,8 @@ public class TicketAppService {
      * @param email
      * @return 
      */
-    @WebMethod(operationName = "userAlreadyExists")
-    public boolean userAlreadyExists(@WebParam(name = "username") String username, @WebParam(name = "email") String email) {
+    @WebMethod(operationName = "UserAlreadyExists")
+    public Boolean UserAlreadyExists(@WebParam(name = "username") String username, @WebParam(name = "email") String email) {
         user = new User();
         user.setEmail(email);
         user.setUsername(username);
